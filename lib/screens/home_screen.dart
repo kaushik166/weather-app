@@ -103,11 +103,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   children: [
                                     Image.network(
+                                      width: 150,
+                                      height: 150,
+                                      fit: BoxFit.cover,
                                       'https://openweathermap.org/img/wn/${controller.weatherModel!.weather[k].icon}@2x.png',
                                     ),
                                     Text(
-                                      controller.weatherModel!.main.temp
-                                          .toString(),
+                                      "${controller.weatherModel!.main.temp.toString().substring(0, 2)} °C",
                                       style: const TextStyle(fontSize: 30),
                                     ),
                                     const SizedBox(
@@ -116,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       controller.weatherModel!.name,
                                       style: const TextStyle(
-                                        fontSize: 22,
+                                        fontSize: 28,
                                         fontWeight: FontWeight.w900,
                                       ),
                                     ),
@@ -179,13 +181,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    controller.weatherModel!
-                                                        .wind.speed
-                                                        .toString(),
+                                                    "${controller.weatherModel!.wind.speed.toString() + " km/h"}",
                                                     style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
-                                                            FontWeight.w400),
+                                                            FontWeight.w500),
                                                   ),
                                                   const SizedBox(
                                                     height: 18,
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
-                                                            FontWeight.w400),
+                                                            FontWeight.w500),
                                                   ),
                                                 ],
                                               ),
@@ -239,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
-                                                            FontWeight.w400),
+                                                            FontWeight.w500),
                                                   ),
                                                   const SizedBox(
                                                     height: 18,
@@ -252,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
-                                                            FontWeight.w400),
+                                                            FontWeight.w500),
                                                   ),
                                                 ],
                                               ),
@@ -287,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      fontSize: 20),
+                                                      fontSize: 25),
                                                 ),
                                                 SizedBox(
                                                   height: 18,
@@ -297,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      fontSize: 20),
+                                                      fontSize: 25),
                                                 ),
                                               ],
                                             ),
@@ -312,7 +312,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       .toString()
                                                       .substring(0, 4),
                                                   style: const TextStyle(
-                                                      fontSize: 18),
+                                                      fontSize: 22,
+                                                      fontWeight:
+                                                          FontWeight.w500),
                                                 ),
                                                 const SizedBox(
                                                   height: 18,
@@ -321,9 +323,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   controller
                                                       .weatherModel!.coord.lon
                                                       .toString()
-                                                      .substring(0, 4),
+                                                      .substring(0, 5),
                                                   style: const TextStyle(
-                                                      fontSize: 18),
+                                                      fontSize: 22,
+                                                      fontWeight:
+                                                          FontWeight.w500),
                                                 ),
                                               ],
                                             ),

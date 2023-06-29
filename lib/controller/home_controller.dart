@@ -37,10 +37,11 @@ class HomeController extends GetxController {
       if (connectivityResult != ConnectivityResult.none) {
         http.Response response = await http.get(
           Uri.parse(
-              "https://api.openweathermap.org/data/2.5/weather?q=$name&appid=02899144a5f30adbdc59e58df33411d5"),
+              "https://api.openweathermap.org/data/2.5/weather?q=$name&appid=02899144a5f30adbdc59e58df33411d5&units=metric"),
+          // "https://api.openweathermap.org/data/2.5/weather?q=$name&appid=02899144a5f30adbdc59e58df33411d5"),
         );
         final decode = jsonDecode(response.body);
-        // print("============>$decode");
+        print("============>$decode");
         weatherModel = WeatherModel.fromJson(decode);
         // print("=============>${weatherModel?.name}");
       } else {
