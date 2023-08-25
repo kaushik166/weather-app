@@ -247,8 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   Text(
                                                     controller.weatherModel!
                                                         .main.feelsLike
-                                                        .toString()
-                                                        .substring(0, 5),
+                                                        .toString(),
                                                     style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
@@ -322,8 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 Text(
                                                   controller
                                                       .weatherModel!.coord.lon
-                                                      .toString()
-                                                      .substring(0, 4),
+                                                      .toString(),
                                                   style: const TextStyle(
                                                       fontSize: 22,
                                                       fontWeight:
