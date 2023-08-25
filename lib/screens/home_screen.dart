@@ -323,7 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   controller
                                                       .weatherModel!.coord.lon
                                                       .toString()
-                                                      .substring(0, 5),
+                                                      .substring(0, 4),
                                                   style: const TextStyle(
                                                       fontSize: 22,
                                                       fontWeight:
